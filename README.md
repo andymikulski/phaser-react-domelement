@@ -1,38 +1,25 @@
-Phaser + TypeScript starter
-------------------------------
-## Features
+```tsx
+const myReactThing = scene.add.react(
+  // World X/Y position
+  128, 128,
+  // React component to be mounted
+  MyReactComponent,
+  // Initial props (optional)
+  {
+    myName: 'Andy',
+    onSomeReactEvent: () => {
+      console.log('Event triggered from MyReactComponent!');
+    }
+  }
+);
 
-- [x] Webpack 4
-- [x] TypeScript 2 compilation
-- [x] ts-lint
-- [x] Webpack Development Server
-- [x] Karma and Jasmine test execution
-
-## How to use
-
-Just clone it and get going.
-
+// Later,
+myReactThing.setProps({
+  myName: 'A-Dawg'
+});
+// It's also a GameObject so we can transform it like anything else:
+myReactThing.x = 512;
+myReactThing.rotation = Math.PI / 2;
+myReactThing.alpha = 0.5;
 ```
-# --depth 1 removes all but one .git commit history
-$ git clone --depth=1 https://github.com/andymikulski/phaser-starter.git <your-project-name>
 
-# change directory to your project
-cd  <your-project-name>
-
-# Maybe remove the `.git` directory and start with a fresh one.
-
-# install all dependencies.
-$ npm i
-
-# Start developing and serve your app:
-npm start
-
-# Build your app without minification:
-npm run build
-
-# Build your app with minification:
-npm run build.all
-
-# run unit tests:
-npm run test
-```

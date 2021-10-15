@@ -9,6 +9,10 @@ const game = new Phaser.Game({
   scale: {
     mode: Phaser.Scale.FIT,
   },
+  dom: {
+    createContainer: true,
+  },
+  parent: '#ui',
   // Remove or comment to disable physics
   physics: {
     default: 'arcade',

@@ -10,14 +10,14 @@ module.exports = {
     entry: {
         'main': './main.ts'
     },
-    
+
     output: {
         filename: '[name].bundle.js',
         path: DESTINATION
     },
 
     resolve: {
-        extensions: ['.ts', '.js'],
+        extensions: ['.ts', '.js', '.tsx'],
         modules: [
             ROOT,
             'node_modules'
@@ -36,7 +36,7 @@ module.exports = {
             },
             {
                 enforce: 'pre',
-                test: /\.ts$/,
+                test: /\.ts(x?)$/,
                 exclude: /node_modules/,
                 use: 'tslint-loader'
             },
@@ -45,7 +45,7 @@ module.exports = {
             * LOADERS
             *****************/
             {
-                test: /\.ts$/,
+                test: /\.ts(x?)$/,
                 exclude: [ /node_modules/ ],
                 use: 'awesome-typescript-loader'
             }
